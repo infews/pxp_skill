@@ -23,7 +23,7 @@ There are five phases. Complete each phase before moving to the next. Always pau
 
 The developer provides an epic as a markdown document in `/docs/epics/`, named with a leading 4-digit number (e.g., `0001-user-authentication.md`). Use the template at `templates/epic.md` as the starting structure for new epics.
 
-Your job is to reduce ambiguity. Read the epic carefully, then ask questions. Focus on:
+Read the epic carefully, then ask questions to reduce ambiguity. Focus on:
 
 - **Scope boundaries** — What is explicitly out of scope?
 - **User intent** — Who is the user and what problem are they solving?
@@ -81,7 +81,7 @@ Add the sequenced plan to the story document's "Implementation Plan" section:
 4. `AUTH-UI-002` — Navigate to auth flow on tap
 ```
 
-Review the plan with the developer before starting implementation.
+Review the plan with the developer before starting the plan.
 
 ### Phase 4: Test-Driven Development
 
