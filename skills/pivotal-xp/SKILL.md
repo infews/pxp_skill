@@ -39,9 +39,9 @@ Ask questions in batches. Don't overwhelm with 20 questions at once — group th
 
 Break the epic into small, vertical slices. Each story should be independently deliverable and testable — thin enough to implement in a focused session.
 
-Stories live as markdown documents in `/docs/<epic-name>/`, where `<epic-name>` matches the epic filename without the number prefix (e.g., `/docs/user-authentication/`). Name story files with leading 4-digit numbers: `0010-login-form.md`, `0020-password-validation.md`, etc. Leave gaps in numbering (10, 20, 30...) so stories can be inserted later.
+Stories live as markdown documents in `/docs/epics/<epic-name>/`, where `<epic-name>` matches the epic filename with the number prefix (e.g., `/docs/0004.user-authentication/`). Name story files with leading 4-digit numbers: `0010-login-form.md`, `0020-password-validation.md`, etc. Leave gaps in numbering (10, 20, 30...) so stories can be inserted between them later if needed.
 
-Use the template at `templates/story.md` as the starting structure for each story document. Whenever a story file is created, link to it from the Epic doc.
+Use the template at `templates/story.md` as the starting structure for each story document. This file should be created under `docs/epics/<epic-name>`. And it should be linked from its owning epic doc in an unordered list in the `## Stories` section. 
 
 Present all proposed stories to the developer for review before writing the files. They may want to reorder, split further, combine, or adjust scope.
 
