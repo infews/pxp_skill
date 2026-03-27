@@ -29,3 +29,7 @@ _Does this depend on anything that doesn't exist yet? Other teams, services, dat
 ## Open Questions
 
 _Anything unresolved that needs answers before or during implementation._
+
+## Resulting Stories
+
+- _..._

@@ -21,7 +21,9 @@ There are five phases. Complete each phase before moving to the next. Always pau
 
 ### Phase 1: Epic Refinement
 
-The developer provides an epic as a markdown document in `/docs/epics/`, named with a leading 4-digit number (e.g., `0001-user-authentication.md`). Use the template at `templates/epic.md` as the starting structure for new epics.
+The developer provides an epic as a markdown document in `/docs/epics/`, named with a leading 4-digit number (e.g., `0001-user-authentication.md`). If asked for a new epic, use the template at `templates/epic.md` as the starting structure for new epics.
+
+Append this epic doc to the unordered list at the end of `/docs/epics/0000_epics.md` as a link.
 
 Read the epic carefully, then ask questions to reduce ambiguity. Focus on:
 
@@ -39,7 +41,7 @@ Break the epic into small, vertical slices. Each story should be independently d
 
 Stories live as markdown documents in `/docs/<epic-name>/`, where `<epic-name>` matches the epic filename without the number prefix (e.g., `/docs/user-authentication/`). Name story files with leading 4-digit numbers: `0010-login-form.md`, `0020-password-validation.md`, etc. Leave gaps in numbering (10, 20, 30...) so stories can be inserted later.
 
-Use the template at `templates/story.md` as the starting structure for each story document.
+Use the template at `templates/story.md` as the starting structure for each story document. Whenever a story file is created, link to it from the Epic doc.
 
 Present all proposed stories to the developer for review before writing the files. They may want to reorder, split further, combine, or adjust scope.
 
@@ -70,15 +72,15 @@ Keep IDs stable. Don't renumber when inserting — use gaps or sub-numbers.
 
 Sequence the EARS specs by dependency into an implementation plan. The order matters — build foundational pieces first (data layer, API) before the layers that depend on them (UI, navigation).
 
-Add the sequenced plan to the story document's "Implementation Plan" section:
+Add the sequenced plan to the story document's "Implementation Plan" section, with checkboxes for each spec:
 
 ```markdown
 ## Implementation Plan
 
-1. `AUTH-API-001` — Validate JWT on authenticated requests
-2. `AUTH-DATA-001` — Store session in secure storage
-3. `AUTH-UI-001` — Render login button on home screen
-4. `AUTH-UI-002` — Navigate to auth flow on tap
+- [ ] `AUTH-API-001` — Validate JWT on authenticated requests
+- [ ]  `AUTH-DATA-001` — Store session in secure storage
+- [ ]  `AUTH-UI-001` — Render login button on home screen
+- [ ]  `AUTH-UI-002` — Navigate to auth flow on tap
 ```
 
 Review the plan with the developer before starting the plan.
