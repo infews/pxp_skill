@@ -87,13 +87,13 @@ Review the plan with the developer before starting the plan.
 
 ### Phase 4: Test-Driven Development
 
-Work through the implementation plan one EARS spec at a time. This is the heart of the pairing discipline. Never batch. Never skip ahead.
+Work through the implementation plan one EARS spec at a time. This is the heart of the pairing discipline. Never batch. Never skip ahead. Break each red/green/refactor step into small pieces of functionality. Favor writing tests for one method over a whole class.
 
 For each EARS spec in the plan:
 
 #### Step 1: Write the test
 
-Write a failing test for the spec. Annotate it with `@spec`:
+Write a failing test for the spec. Annotate tests with `@spec`:
 
 ```
 // @spec AUTH-API-001
