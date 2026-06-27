@@ -1,0 +1,11 @@
+{
+  "name": "pxp",
+  "description": "Pivotal Labs–style XP pairing workflow: epic refinement, story slicing, EARS specifications, and strict per-spec TDD with developer approval at every gate.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Davis W. Frank"
+  },
+  "homepage": "https://github.com/infews/pxp_skill",
+  "repository": "https://github.com/infews/pxp_skill",
+  "license": "MIT"
+}

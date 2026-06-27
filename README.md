@@ -1,6 +1,6 @@
-# Pivotal XP — Claude Code Skills Package
+# Pivotal XP — Claude Code Plugin
 
-A Claude Code skills package for running solo or small-team coding sessions with Pivotal Labs–style Extreme Programming discipline. You and Claude pair on epics, slice them into stories, write EARS specifications, and TDD each spec one behavior at a time — all with explicit developer approval at every gate.
+A Claude Code plugin for running solo or small-team coding sessions with Pivotal Labs–style Extreme Programming discipline. You and Claude pair on epics, slice them into stories, write EARS specifications, and TDD each spec one behavior at a time — all with explicit developer approval at every gate.
 
 ## What's in the box
 
@@ -12,20 +12,51 @@ Three skills, designed to ship together but usable independently:
 
 ## Install
 
-This is a bare skills directory — no plugin manifest. Two ways to use it:
-
-**Per-project** — clone into a project and Claude Code picks up the `skills/` directory automatically when you work in that repo:
+Add the community marketplace if you haven't already, then install:
 
 ```bash
-git clone git@github.com:infews/pxp_skill.git
+claude plugin marketplace add anthropics/claude-plugins-community
+claude plugin install pxp@claude-community
 ```
 
-**Globally** — symlink the individual skills into your user skills directory so they're available across all your projects:
+Or install directly from the repository:
 
 ```bash
-ln -s "$(pwd)/skills/pivotal-xp"             ~/.claude/skills/pivotal-xp
-ln -s "$(pwd)/skills/test-driven-development" ~/.claude/skills/test-driven-development
-ln -s "$(pwd)/skills/ears-specifications"     ~/.claude/skills/ears-specifications
+claude plugin install github:infews/pxp_skill
+```
+
+Skills are namespaced under `pxp:` — see the table below for what's available.
+
+| Skill | Invocation |
+|---|---|
+| Pivotal XP workflow | `/pxp:pivotal-xp` (or Claude picks it up automatically) |
+| EARS Specifications | `/pxp:ears-specifications` |
+| Test-Driven Development | `/pxp:test-driven-development` |
+
+## Update
+
+**Marketplace install:** auto-update is on by default. To pull updates manually:
+
+```bash
+/plugin marketplace update claude-community
+```
+
+**Direct git install:** reinstall when a new version is released:
+
+```bash
+claude plugin install github:infews/pxp_skill
+```
+
+## Uninstall
+
+```bash
+/plugin uninstall pxp@claude-community
+```
+
+Or if you installed directly from git, omit the marketplace suffix:
+
+```bash
+/plugin uninstall pxp
 ```
 
 ## First session
@@ -60,16 +91,16 @@ All artifacts live in `/docs/epics/` alongside your code — no Jira, no Linear,
 `pivotal-xp` Phase 4 prefers external TDD skills if available, falling back to the bundled one:
 
 | TDD skill installed | What pivotal-xp uses |
-|---|---|
+| --- | --- |
 | `superpowers-ruby:test-driven-development` | superpowers-ruby version (first choice) |
 | `superpowers:test-driven-development` | superpowers version (second choice) |
-| Neither | The bundled `test-driven-development` skill in this package |
+| Neither | `pxp:test-driven-development` (bundled fallback) |
 
 The package is fully self-contained — no other plugins required.
 
 ## Tips
 
-- **Model choice.** Phases 1–3 reward Opus (epic refinement, story design, and EARS authoring are high-judgment). Phase 4 (mechanical RED-GREEN-REFACTOR) runs well on Sonnet. Switch with `/model` between phases if you want the split.
+- **Model choice.** Phases 1–3 reward Opus (epic refinement, story design, and EARS authoring are high-judgment). Phase 4 (mechanical RED-GREEN-REFACTOR) runs well on Sonnet, or use `/fast` to keep Opus quality with faster streaming. Switch with `/model` between phases or toggle `/fast` within a phase.
 - **File ordering.** Epics and stories use 4-digit prefixes (`0001-`, `0010-`) with gaps, so you can insert later items without renumbering.
 - **Resumable across sessions.** Because all spec state lives in the story doc with `@spec` annotations in the code, work picks back up cleanly across long sessions or after a context reset.
 - **EARS standalone.** If you only want lightweight Spec-Driven-Dev (no Pivotal workflow), use the `ears-specifications` skill on its own — it's not coupled to `pivotal-xp`.

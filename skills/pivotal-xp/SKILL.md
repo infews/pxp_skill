@@ -20,9 +20,9 @@ A disciplined Extreme Programming workflow inspired by Pivotal Labs, covering th
 Different phases reward different models. A running agent can't switch its own model — these are guidance for the developer:
 
 - **Phases 1–3 (epic refinement, story slicing, EARS): Opus.** High-judgment work that benefits from deeper reasoning.
-- **Phase 4 (TDD execution): Sonnet or Opus.** Mechanical RED-GREEN-REFACTOR is fast on Sonnet; Opus is fine if continuity is more valuable to you than speed/cost.
+- **Phase 4 (TDD execution): Sonnet, Opus, or Opus with `/fast`.** Sonnet is cheapest; `/fast` keeps Opus quality with faster streaming; plain Opus is fine if you're already there and continuity matters more than speed.
 
-Switch with `/model` between phases if you want the split.
+Switch with `/model` between phases, or toggle `/fast` within a phase.
 
 ## The Workflow
 
@@ -73,7 +73,7 @@ For each story, derive EARS specs from the Gherkin acceptance criteria. One Gher
 
 #### EARS Specifications
 
-**REQUIRED SUB-SKILL:** Use the `ears-specifications` skill (shipped with this package at `skills/ears-specifications/`) for the five patterns, the semantic-ID format, and the Gherkin-to-EARS decomposition technique.
+**REQUIRED SUB-SKILL:** Use the `pxp:ears-specifications` skill for the five patterns, the semantic-ID format, and the Gherkin-to-EARS decomposition technique.
 
 #### TDD Plan
 
@@ -100,7 +100,7 @@ Work through the implementation plan one EARS spec at a time. This is the heart 
 
 1. `superpowers-ruby:test-driven-development` — Superpowers-Ruby plugin
 2. `superpowers:test-driven-development` — Superpowers plugin
-3. `test-driven-development` — shipped with this package at `skills/test-driven-development/` (fallback for installs without any superpowers plugin)
+3. `pxp:test-driven-development` — bundled fallback (use when no superpowers plugin is installed)
 
 If none are available, the cycle is: write one failing test → confirm it fails for the expected reason → write the minimal code to make it pass → confirm it passes (and re-run the full suite) → refactor with the context fresh.
 

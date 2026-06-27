@@ -1,6 +1,6 @@
 ---
 name: test-driven-development
-description: Use when implementing any feature or bugfix in code — guides the strict RED-GREEN-REFACTOR cycle: write one failing test, confirm it fails for the right reason, write the minimal code to pass, refactor while the context is fresh.
+description: "Use when implementing any feature or bugfix in code — guides the strict RED-GREEN-REFACTOR cycle: write one failing test, confirm it fails for the right reason, write the minimal code to pass, refactor while the context is fresh."
 ---
 
 # Test-Driven Development
