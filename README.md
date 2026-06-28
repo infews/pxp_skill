@@ -8,7 +8,7 @@ Three skills, designed to ship together but usable independently:
 
 - **`pivotal-xp`** — the workflow. Five phases from epic refinement to story completion, with developer-approval gates at every TDD transition.
 - **`test-driven-development`** — a standalone RED-GREEN-REFACTOR discipline skill. Used as a fallback by `pivotal-xp` when no richer TDD skill is installed.
-- **`ears-specifications`** — a reusable reference for EARS (Easy Approach to Requirements Syntax) patterns and the semantic-ID convention. Useful outside Pivotal-XP for any Spec-Driven-Development flow.
+- **`ears-specifications`** — a reusable reference for [EARS](https://alistairmavin.com/ears/) (Easy Approach to Requirements Syntax) patterns and the semantic-ID convention. Useful outside Pivotal-XP for any Spec-Driven-Development flow.
 
 ## Install
 
